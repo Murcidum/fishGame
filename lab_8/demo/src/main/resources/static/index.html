@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подводный Кликер</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="end-screen">
+    <h2 class="end-title">⏰ Время вышло!</h2>
+    <div id="final-score">Ваш результат: 0 очков</div>
+    <div id="final-name" class="player-name"></div>
+    <button id="restart-button">Начать заново</button>
+    <div id="leaderboard">
+        <h3>Топ 10 игроков:</h3>
+        <ul id="leaderboard-list"></ul>
+    </div>
+</div>
+
+<div id="start-screen">
+    <h1 class="game-title">🐠 Подводный Кликер</h1>
+    <form id="start-form">
+        <input type="text" id="name-input" placeholder="Введите ваше имя" autocomplete="off">
+        <button type="button" id="start-button" disabled>Начать игру</button>
+    </form>
+</div>
+
+<div id="game-container">
+    <div class="game-header">
+        <div id="score">Очки: 0</div>
+        <div id="timer">00:00</div>
+        <div>
+            <button id="pause-button">Пауза</button>
+            <span id="player-name" class="player-name"></span>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

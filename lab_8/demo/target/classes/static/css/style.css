@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Стартовый экран */
+#start-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 200;
+}
+
+.game-title {
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,78,146,0.5);
+}
+
+#start-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#name-input {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: 2px solid #004e92;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+    width: 300px;
+    text-align: center;
+}
+
+#start-button {
+    padding: 12px 40px;
+    font-size: 1.2em;
+    background: #004e92;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#start-button:disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#start-button:hover:not(:disabled) {
+    background: #0066cc;
+    transform: scale(1.05);
+}
+
+/* Игровой экран */
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    position: relative;
+    display: none;
+}
+
+.game-header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+#score, #timer {
+    color: white;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#pause-button {
+    padding: 8px 20px;
+    background: #FF9800;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#pause-button:hover {
+    background: #F57C00;
+}
+
+.player-name {
+    color: #4CAF50;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-left: 15px;
+}
+
+.player-name.tester {
+    color: #FF4081;
+    font-weight: bold;
+}
+
+/* Рыбки */
+.fish {
+    position: absolute;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    user-select: none;
+}
+
+.fish:hover {
+    opacity: 0.8;
+}
+
+.small { width: 50px; }
+.medium { width: 80px; }
+.large { width: 120px; }
+
+/* Экран окончания */
+#end-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 300;
+}
+
+.end-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#final-score {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+#restart-button {
+    padding: 15px 50px;
+    font-size: 1.2em;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#restart-button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+#leaderboard {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.new-record {
+    color: #FFD700;
+    font-weight: bold;
+    animation: glow 1s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #FFD700; }
+    50% { text-shadow: 0 0 20px #FFD700; }
+    100% { text-shadow: 0 0 5px #FFD700; }
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+#leaderboard-list li {
+    margin: 10px 0;
+    padding: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
